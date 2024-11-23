@@ -1,0 +1,6 @@
+*.pyc
+__pycache__/
+*.env
+
+# Ignore all files in 'for_testing'
+for_testing/*
