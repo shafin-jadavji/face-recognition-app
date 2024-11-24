@@ -63,7 +63,7 @@ class OpenCVDetector:
                 cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
             # Display the resulting frame
-            cv2.imshow('Face Detection', frame)
+            cv2.imshow('Video Face Detection - OpenCV', frame)
 
             # Exit loop if 'q' is pressed
             if cv2.waitKey(1) & 0xFF == ord('q'):

@@ -7,7 +7,14 @@ from detectors.dlib_detector import DlibDetector
 TEST_IMAGE_PATH = "../data/test_image.jpg"
 
 def display_menu():
+    """
+    Displays a menu of face detection modes and prompts the user to select one.
     
+    Returns:
+        str: The selected mode, which can be one of "opencv-image", "opencv-video",
+             "dlib-image", or "dlib-video".
+    """
+        
     menu_options = {
         1: ("opencv-image", "OpenCV Image Detection"),
         2: ("opencv-video", "OpenCV Video Detection"),
@@ -28,6 +35,7 @@ def display_menu():
         except ValueError:
             print("Please enter a valid number")
 
+
 def process_image_detection(detector, window_name):
     """
     Handle image detection process
@@ -35,7 +43,6 @@ def process_image_detection(detector, window_name):
     Args:
         detector: OpenCV or DLIB face detector
         window_name: Name to display on window
-
     """    
     try:
         image_with_faces = detector.detect_faces(TEST_IMAGE_PATH)
@@ -66,36 +73,6 @@ def main():
     else:
         process_image_detection(detector, window_name)
 
-    # if mode == "opencv-image":
-
-    #     detector = OpenCVDetector()
-
-    #     try:
-    #         image_with_faces = detector.detect_faces(TEST_IMAGE_PATH)
-    #         display_image(image_with_faces, window_name="Detected Faces - OpenCV")
-    #     except FileNotFoundError as e:
-    #         print(e)
-
-    # elif mode == "opencv-video":
-    #     detector = OpenCVDetector()
-    #     detector.detect_faces_video()
-        
-    # elif mode == "dlib-image":
-
-    #     detector = DlibDetector()
-
-    #     try:
-    #         image_with_faces = detector.detect_faces(TEST_IMAGE_PATH)
-    #         display_image(image_with_faces, window_name="Detected Faces - DLIB")
-    #     except FileNotFoundError as e:
-    #         print(e)
-
-    # elif mode == "dlib-video":
-    #     detector = DlibDetector()
-    #     detector.detect_faces_video()
-
-    # else:
-    #     print("Invalid mode. Please choose 'opencv-image' or 'opencv-video' or 'dlib-image' or 'dlib-video'.")
 
 if __name__ == "__main__":
     main()
