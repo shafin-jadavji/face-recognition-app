@@ -17,13 +17,12 @@ This project is a Python-based face recognition application designed to help lea
 
 ### Current Features
 1. **Face Detection (Static Images):**
-   - Detect faces in a single image using OpenCV's Haar Cascade.
+   - Detect faces in a single image using OpenCV's Haar Cascade or DLIB libraries.
 
 2. **Face Detection (Video Feed):**
    - Detect faces in real-time video using a webcam.
 
 ### Future Enhancements
-- Switch to DLIB’s `get_frontal_face_detector()` for more robust detection.
 - Add face recognition functionality with a database of known faces.
 - Implement learning of new faces dynamically.
 - Add support for group face recognition, emotion detection, and cloud integration.
@@ -33,16 +32,21 @@ This project is a Python-based face recognition application designed to help lea
 ## **Project Structure**
 
 ```bash
-    face_recognition_project/
-    ├── src/                    # Contains the main Python script
-    │   ├── main.py             # Entry point of the application
-    │   └── face_detection.py   # Face detection module
-    ├── data/                   # Stores images and databases
-    │   └── test_image.jpg      # Example image for testing
-    ├── requirements.txt        # Lists project dependencies
-    ├── .gitignore              # Specifies files and directories to ignore
-    ├── LICENSE                 # Project license information
-    └── README.md               # Describes the project
+face_recognition_project/
+├── data/                           # Test images, known faces, etc.
+│   └── test_image.jpg
+├── src/                            # Source code for the project
+│   ├── detectors/                  # Detection-related logic
+│   │   ├── opencv_detector.py
+│   │   └── dlib_detector.py
+│   ├── utils/                      # Utility functions
+│   │   └── display.py
+│   └── main.py                     # Entry point for the application
+├── requirements.txt                # Dependencies list
+├── .gitignore                      # Files to ignore in Git
+├── README.md                       # Documentation
+├── LICENSE                         # Project license
+└── README.md                       # Describes the project
 ```
 
 ---
