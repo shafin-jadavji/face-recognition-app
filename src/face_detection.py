@@ -147,15 +147,4 @@ def detect_faces_from_camera_dlib():
     # Release the capture and close all OpenCV windows
     cap.release()
     cv2.destroyAllWindows()
-
-def display_image(image, window_name="Image"):
-    """
-    Display an image using OpenCV.
-
-    Args:
-        image (numpy.ndarray): Image to display.
-        window_name (str): Name of the display window.
-    """
-    cv2.imshow(window_name, image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    
