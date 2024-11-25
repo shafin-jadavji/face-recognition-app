@@ -88,7 +88,8 @@ This project uses the following libraries:
 
 - opencv-python: For image and video processing.
 - numpy: For numerical operations.
-- dlib (planned): For advanced face detection and recognition.
+- dlib: For advanced face detection and recognition.
+- face_recognition: For face recognition.
 
 Install dependencies using:
 
