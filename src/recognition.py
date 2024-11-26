@@ -101,22 +101,29 @@ class FaceRecognition:
         Args:
             video (str): Path to the video file.
         """
-        cap = cv2.VideoCapture(video)
+        try:
+            cap = cv2.VideoCapture(video)
+            if not cap.isOpened():
+                raise ValueError("Error opening video file")
 
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                break
+            while True:
+                ret, frame = cap.read()
+                if not ret:
+                    break
 
-            # Recognize faces in the frame
-            recognized_frame = self.recognize_faces_in_image(frame)
+                # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
+                rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-            # Display the frame with recognized faces
-            cv2.imshow("Recognized Faces", recognized_frame)    
+                # Recognize faces in the frame
+                recognized_frame = self.recognize_faces_in_image(rgb_frame)
 
-            # Break the loop if 'q' is pressed
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+                # Display the frame with recognized faces
+                cv2.imshow("Recognized Faces", recognized_frame)    
 
-        cap.release()
-        cv2.destroyAllWindows()
+                # Break the loop if 'q' is pressed
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
+
+        finally:
+            cap.release()
+            cv2.destroyAllWindows()
