@@ -22,8 +22,18 @@ This project is a Python-based face recognition application designed to help lea
 2. **Face Detection (Video Feed):**
    - Detect faces in real-time video using a webcam.
 
+3. **Face Recognition (Static Images):**
+   - Recognize faces in a single image using face_recognition library.
+   - Display the image with bounding boxes around recognized faces and their names.
+
+4.. **Face Recognition (Video Feed):**
+   - Recognize faces in real-time video using face_recognition library.
+   - Display the video feed with bounding boxes around recognized faces and their names.
+
 ### Future Enhancements
-- Add face recognition functionality with a database of known faces.
+- Implement performnace tweaks for faster real-time face detection and recognition.
+- Implement better menu and user interface.
+- Add configuration options for face detection and recognition.
 - Implement learning of new faces dynamically.
 - Add support for group face recognition, emotion detection, and cloud integration.
 
@@ -40,7 +50,9 @@ face_recognition_project/
 │   │   ├── opencv_detector.py
 │   │   └── dlib_detector.py
 │   ├── utils/                      # Utility functions
-│   │   └── display.py
+│   │   ├── image_loader.py         # Load images
+│   │   └── display.py              # Display images
+│   ├── recognition.py              # Face recognition logic
 │   └── main.py                     # Entry point for the application
 ├── requirements.txt                # Dependencies list
 ├── .gitignore                      # Files to ignore in Git
