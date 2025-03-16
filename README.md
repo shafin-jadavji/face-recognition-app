@@ -56,7 +56,6 @@ face_recognition_project/
 │   └── main.py                     # Entry point for the application
 ├── requirements.txt                # Dependencies list
 ├── .gitignore                      # Files to ignore in Git
-├── README.md                       # Documentation
 ├── LICENSE                         # Project license
 └── README.md                       # Describes the project
 ```
